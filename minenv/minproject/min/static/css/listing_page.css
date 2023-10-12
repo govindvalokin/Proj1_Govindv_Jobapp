@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    
+    background-color: rgb(238, 211, 211);
+}
+.container{
+    height: auto;
+    width: 75%;
+    /* background-color: rgb(142, 228, 85); */
+    margin: 0 auto;
+    margin-top: 20px;
+    
+}
+table{
+    border: 2px solid rgb(240, 142, 29);
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 20px;
+}
+h1{
+    text-align: center;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.newform{
+    text-align: right;
+    padding: 0px 25px 10px 0px;
+    margin-right: 27px;
+    
+    /* background-color: yellow; */
+    
+    
+    
+}
+th{
+    background-color: rgb(240, 142, 29);
+    color: white;
+    padding: 10px;
+    height: 20px;
+    width: 500px;   
+}
+td{
+    padding: 10px;
+    height: 20px;
+    width: 500px;
+    background-color: white;
+
+}
+#butt-2{
+    background-color: white;
+    color: rgb(22, 75, 6);
+    font-weight: bold;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+}
+.editbutton{
+    background-color: white;
+    color: rgb(30, 70, 202);
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    font-weight: bold;
+    
+}

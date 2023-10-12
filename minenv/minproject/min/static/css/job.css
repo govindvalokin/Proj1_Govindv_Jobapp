@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    
+    background-color: rgb(238, 211, 211);
+}
+.mainContainer{
+    height: auto;
+    width: 900px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    box-shadow: 0 60px 80px rgba(0, 0, 0, 0.6), 0 45px 26px rgba(0,0,0,0.14);
+    padding-bottom: 20px;
+    padding-left: 10px;
+      
+}
+.Title{
+    text-align: center;
+    padding: 30px;
+    color: blue;
+}
+Form{
+    width: 900px;
+    
+}
+.formRow{
+    display: flex;
+    height: 40px;
+    /* align-items: baseline; */
+    margin: 0px 5px 0px 5px;
+    
+    
+        
+}
+.userInputs{
+    width: 450px;
+    /* background-color: aquamarine; */
+    display: flex;
+    /* justify-content: space-evenly; */
+    padding: 5px;
+    /* justify-content: flex-start; */
+
+    
+}
+input[type="text"]{
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid;
+    
+}
+select{
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid;
+    background-color: white;
+}
+#code{
+    width: 50px;
+    height: 30px;
+}
+input[type="date"]{
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid;
+    background-color: white;
+}
+input[type="email"]{
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+#mob{
+    width: 250px;
+    height: 30px;
+}
+#buttonClass{
+    display: flex;
+    justify-content: center;
+    
+    margin-top: 20px;
+    
+}
+#b2{
+    background-color: rgb(26, 56, 190);
+    width: 100px;
+    border-radius: 5px;
+    margin: 5px;
+    color: white;
+    height: 40px;
+    
+    
+}
+.L{
+    width: 100px;
+    text-align:start;
+   
+    margin-right: 5px;
+    padding-top: 5px;
+    
+}
+span{
+    margin-right: 40px;
+}
+
+#gender-options{
+    padding: 6px 8px;
+}
+.validateRow{
+    /* background-color: green; */
+    height: 15px;
+    
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    width: 850px;
+}
+.validateBox1{
+    /* background-color: yellow; */
+    height: 15px;
+    width: 425px;
+    text-align: center;
+    color: Red;
+    font-weight: lighter;
+    /* padding-top: 0px; */
+    
+}
+.validateBox2{
+    /* background-color: lightblue; */
+    height: 15px;
+    width: 425px;
+    text-align: center;
+    color: red;
+    font-weight: lighter;
+}
+
+
+
+

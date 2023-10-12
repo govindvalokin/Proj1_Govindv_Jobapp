@@ -1,0 +1,239 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Form</title>
+    <link rel="stylesheet" href="{% static 'css/job.css' %}">
+    <script src="{% static 'js/job.js' %}"></script>
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="Title">
+            <h1>Job Application Form</h1>
+        </div>
+        
+        <form action="" class="Form" id="Form" onsubmit="validateForm(event)" method="POST">
+            {% csrf_token %}
+                <div class="formRow">
+                    <div class="userInputs">
+                        <div class="L">
+                            <label>First Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="firstName" onchange="return validateFirstName(event)" name="firstname" placeholder="  First Name">
+                        </div>    
+                    </div>
+                    <div class="userInputs">
+                        <div class="L">
+                            <label>Last Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="lastName" onchange="return validateLastName(event)" name="lastname" placeholder="  Last Name">
+                        </div>   
+                    </div>    
+                </div>
+                <div class="validateRow">
+                    <div class="validateBox1">
+                        <h6 id="validFirstName"></h6>
+                    </div>
+                    <div class="validateBox2">
+                        <h6 id="validLastName"></h6>
+                    </div>
+                </div>
+                <div class="formRow">
+                    <div class="userInputs">
+                        <div class="L">
+                            <label>Phone</label>
+                        </div>
+                        <div class="input-field">
+                            <select name="code" id="code">
+                                <option selected value="+91">+91</option>
+                                <option value="+1">+1</option>
+                            </select>
+                            <input type="text" onchange="validatePhone(event)" name="phone" placeholder="  Phone" id="mob" class="phoneno">
+                        </div>    
+                    </div>
+                    <div class="userInputs">
+                        <div class="L">
+                            <label>Email</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="email" onchange="validateEmail(event)" id="email" name="email" placeholder="  Email">
+                        </div>    
+                    </div>    
+                </div>
+                <div class="validateRow">
+                    <div class="validateBox1">
+                        <h6 id="validateNumber"></h6>
+                    </div>
+                    <div class="validateBox2">
+                        <h6 id="validateEmail"></h6>
+                    </div>
+                </div>
+                <div class="formRow">
+                    <div class="userInputs">
+                        <div class="L">
+                            <label>DOB</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="date" id="date" name="dob" onchange= "validateDate()">
+                        </div>    
+                    </div>
+                    <div class="userInputs">
+                        <div class="L">
+                            <label>Gender</label>
+                        </div>
+                        <div class="input-field" id="gender-options">
+                            <input type="radio" name="gender" value="male">
+                            <span>Male</span>
+                            <input type="radio" name="gender" value="female">
+                            <span>Female</span>
+                            <input type="radio" name="gender" value="other">
+                            <span>Others</span>
+                        </div>   
+                    </div>
+                </div>
+                <div class="validateRow">
+                    <div class="validateBox1">
+                        <h6 id="validateDate"></h6>
+                    </div>
+                    <div class="validateBox2">
+                        <h6 id="validateGender"></h6>
+                    </div>
+                </div>
+                <div class="formRow">
+                    <div class="userInputs">
+                        <div class="L">
+                            <label>Job Role</label>
+                        </div>
+                        <div class="input-field">
+                            <select name="role" id="role" onchange="validateJobRole()">
+                                <option value="" disabled="disabled" selected>Choose JobRole</option>
+                                <option value="Developer">Developer</option>
+                                <option value="Testing">Testing</option>
+                                <option value="Devops">Devops</option>
+                                <option value="Operations">Operations</option>
+                                <option value="Accounting">Accounting</option>
+                            </select>
+                        </div>    
+                    </div>
+                    <div class="userInputs">
+                        <div class="L">
+                            <label>Experience</label>
+                        </div>
+                        <div class="input-field">
+                            <select name="experience" id="experience" onchange="validateExperience()">
+                                <option value="" selected="selected" disabled="disabled">Choose Experience (In years)</option>
+                                <option value = "0">0</option>
+                                <option value = "1">1</option>
+                                <option value = "2">2</option>
+                                <option value = "3">3</option>
+                                <option value = "4">4</option>
+                                <option value = "5+">5+</option>
+                            </select>
+                        </div>   
+                    </div>
+                </div>
+                <div class="validateRow">
+                    <div class="validateBox1">
+                        <h6 id="validateJobRole"></h6>
+                    </div>
+                    <div class="validateBox2">
+                        <h6 id="validateExperience"></h6>
+                    </div>
+                </div>
+                <div class="formRow">
+                    <div class="userInputs">
+                        <div class="L">
+                            <label>Address Line 1</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" onchange="validateAddress1(event)" id="address1" placeholder="  Address Line 1" name="addressline1">
+                        </div>   
+                    </div>
+                    <div class="userInputs">
+                        <div class="L">
+                            <label>Address Line 2</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" onchange="validateAddress2(event)" id="address2" placeholder="  Address Line 2" name="addressline2">
+                        </div>     
+                    </div>
+                </div>
+                <div class="validateRow">
+                    <div class="validateBox1">
+                        <h6 id="validateAddress1"></h6>
+                    </div>
+                    <div class="validateBox2">
+                        <h6 id="validateAddress2"></h6>
+                    </div>
+                </div>
+                <div class="formRow">
+                    <div class="userInputs">
+                        <div class="L">
+                            <label>City</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="city" onchange="validateCity(event)" placeholder="  City" name="city">
+                        </div>   
+                    </div>
+                    <div class="userInputs">
+                        <div class="L">
+                            <label>State</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="state" onchange="validateState(event)" placeholder="  State" name="state">
+                        </div>    
+                    </div>
+                </div>
+                <div class="validateRow">
+                    <div class="validateBox1">
+                        <h6 id="validateCity"></h6>
+                    </div>
+                    <div class="validateBox2">
+                        <h6 id="validateState"></h6>
+                    </div>
+                </div>
+                <div class="formRow">
+                    <div class="userInputs">
+                        <div class="L">
+                            <label>Zip Code</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="zipCode" onchange="validateZipCode(event)" placeholder="  Zip Code" name="zipcode">
+                        </div>    
+                    </div>
+                    <div class="userInputs">
+                        <div class="L">
+                            <label>Country</label>
+                        </div>
+                        <div class="input-field">
+                            <select name="country" id="country">
+                                <option value="" disabled="disabled" selected>Choose Country</option>
+                                <option value="INDIA">INDIA</option>
+                                <option value="US">US</option>
+                                
+                            </select>  
+                        </div>    
+                    </div>
+                </div>
+                <div class="validateRow">
+                    <div class="validateBox1">
+                        <h6 id="validateZipCode"></h6>
+                    </div>
+                    <div class="validateBox2">
+                        <h6 id="validateCountry"></h6>
+                    </div>
+                </div>
+                <div class="formRow" id="buttonClass">
+                    <input type="submit" value="Submit" id="b2"  name="submit">
+                </div>            
+        </form>
+    </div>
+
+
+   
+</body>
+</html>
