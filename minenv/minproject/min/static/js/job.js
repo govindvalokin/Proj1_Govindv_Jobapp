@@ -13,29 +13,14 @@ function validateForm(event){
         return;
     }
 }
-// const form = document.getElementById('Form');
-// form.addEventListener('submit',(event)=>{
-    
-//     validateFirstName();
-//     validateLastName();
-//     validatePhone();
-//     validateEmail();
-//     validateAddress1();
-//     validateAddress2();
-//     validateCity();
-//     validateState();
-//     validateZipCode();
-// });
+
 
 
 
 function validateFirstName(event){
     var firstname = document.getElementById("firstName").value.trim();
     
-    // console.log(firstname);
-    // firstname.addEventListener("onkeyup",function(e){
-    //     console.log("113");
-    // window.onload = function(){
+    
         if(firstname===""){
             document.getElementById("validFirstName").innerHTML="Name can not be null"; 
             // console.log("121");
@@ -51,30 +36,11 @@ function validateFirstName(event){
             document.getElementById("validFirstName").innerHTML="";
             return true
         }
-    // }
-
-    // });
+    
 }
 
-// function validateLastName(){
-//     var lastname = document.getElementById("lastName");
-//     lastname.addEventListener("onkeyup",function(){
-//         if(lastname.value===""){
-//             document.getElementById("validLastName").innerHTML="Name can not be null";
-//             // console.log("121");
-//             return false;
-//         }
-//         if((lastname.value.length<3) || (lastname.value.length>25)){
-//             document.getElementById("validLastName").innerHTML="must be b/w 3 and 25";
-//             return false;
-//         }
-//         else{
-//             document.getElementById("validLastName").innerHTML="";
-//             return true;
-//         }
-//     });
-    
-// }
+
+
 
 function validateLastName(event){
     var lastname = document.getElementById("lastName").value.trim();
@@ -94,25 +60,8 @@ function validateLastName(event){
 }
 
 
-// function validatePhone(event){
-//     var phonenumber = document.getElementById("mob");
-//     if(phonenumber.value===""){
-//         document.getElementById("validateNumber").innerHTML="Number can't be null";
-//         return false;
-//     }
-//     if(isNaN(phonenumber)==="false"){
-//         document.getElementById("validateNumber").innerHTML="Must be a number";
-//         return false;
-//     }
-//     if(phonenumber.value.length != 10){
-//         document.getElementById("validateNumber").innerHTML="Must be a 10 digit number";
-//         return false;
-//     }
-//     else{
-//         document.getElementById("validateNumber").innerHTML="";
-//         return true;
-//     }
-// }
+
+
 
 function validatePhone(event){
     var phonenumber = document.getElementById("mob").value.trim();
@@ -152,23 +101,7 @@ function validateEmail(event){
     }
 }
 
-// function validateDate(event){
-//     var date = document.getElementById("date");
-//     const regexdate = /^\d{2}-\d{2}-\d{4}$/;
 
-//     if(date.value===""){
-//         document.getElementById("validateDate").innerHTML="Date can't be null";
-//         return false;
-//     }
-//     if(!regexdate.test(date.value)){
-//         document.getElementById("validateDate").innerHTML="Invalid format";
-//         return false;
-//     }
-//     else{
-//         document.getElementById("validateDate").innerHTML="";
-//         return true;
-//     }
-// }
 function validateAddress1(event){
     var address1 = document.getElementById("address1").value.trim();
     if(address1==="" || address1==null){
@@ -260,29 +193,8 @@ function validateGender(event){
 
 
 
-// function validateGenderField(event){
-//     var gender=document.querySelector('input[name="gender"]:checked').value;
-//     if(gender!=='male' && gender!=='female' && gender!=='other'){
-//         document.getElementById('validateGender').innerHTML="Choose any one option";
-//         return false;
-//     }
-//     else{
-//         return true;
-//     }
-// }
-// function validateJobRole(event){
-//     var jobrole=document.getElementsByName('role').value;
-    
-//     if(jobrole===""){
-//         document.getElementById("validateJobRole").innerHTML="please select an option";
-//         return false;
-//     }
-//     else{
-//         document.getElementById("validateJobRole").innerHTML="";
-//         return true;
-//     }
-    
-// }
+
+
 
 
 function validateDate(){

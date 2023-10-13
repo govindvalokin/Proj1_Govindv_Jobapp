@@ -8,8 +8,18 @@
     <link rel="stylesheet" href="{% static 'css/listing_page.css' %}">
 </head>
 <body>
+        {% if messages %}
+            {% for m in messages %}
+                <div class="alert">
+                    <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <p> {{ m }}</p>
+                </div>
+            {% endfor %}
+        {% endif %} 
+    
     
     <div class="container">
+        
         <h1>Listing Page</h1>
         <table>
         
@@ -20,6 +30,7 @@
                 <th>Job Role</th>
                 <th>Phone Number</th>
                 <th>Action1</th>
+                <th>Action2</th>
             </tr>
             {% for i in data %}
             <tr>
@@ -30,7 +41,8 @@
                 <td>{{i.job_role}}</td>
                 <td>{{i.phone}}</td>
                 
-                <td><a href="/min/updateform?userid={{i.id}}"><button class="editbutton">Edit</button></a></td>
+                <td><a href="/updateform?userid={{i.id}}"><button class="editbutton">Edit</button></a></td>
+                <td><a href="/deleteform?userid={{i.id}}"><button class="delete-button">Delete</button></td>
             </tr>
             {% endfor %}    
         </table>

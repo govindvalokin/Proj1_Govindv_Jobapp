@@ -9,7 +9,17 @@
     <script src="{% static 'js/job.js' %}"></script>
 </head>
 <body>
+        {% if messages %}
+            {% for m in messages %}
+                <div class="alert">
+                    <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <p> {{ m }}</p>
+                </div>
+            {% endfor %}
+        {% endif %} 
+          
     <div class="mainContainer">
+         
         <div class="Title">
             <h1>Job Application Form</h1>
         </div>

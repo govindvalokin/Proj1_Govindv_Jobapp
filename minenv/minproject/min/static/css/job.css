@@ -144,6 +144,35 @@ span{
     font-weight: lighter;
 }
 
+.alert {
+    padding: 8px;
+    background-color:#eb5c1a; 
+    color: rgb(0, 0, 0);
+    margin-bottom: 15px;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 7px;
 
+
+}
+
+  /* /* The close button / */
+.close-btn {
+    margin-left: 15px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+  /* / When moving the mouse over the close button */ */
+.closebtn:hover {
+    color: black;
+}
 
 
