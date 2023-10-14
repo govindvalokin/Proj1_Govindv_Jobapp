@@ -8,7 +8,7 @@ class Jobseeker(models.Model):
                     ('+91','+91'),
                     ('+1','+1')
                     ]
-    code = models.CharField(max_length=3,null=False, choices = country_code)
+    code = models.CharField(max_length = 3, null = False, choices = country_code)
     phone = models.BigIntegerField(null=False)
     email = models.EmailField(null=False)
     dob = models.DateField(null=False)

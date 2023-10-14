@@ -53,6 +53,7 @@ input[type="text"]{
     height: 30px;
     border-radius: 5px;
     border: 1px solid;
+    padding-left: 5px;
     
 }
 select{
@@ -61,6 +62,7 @@ select{
     border-radius: 5px;
     border: 1px solid;
     background-color: white;
+    padding-left: 5px;
 }
 #code{
     width: 50px;
@@ -72,15 +74,18 @@ input[type="date"]{
     border-radius: 5px;
     border: 1px solid;
     background-color: white;
+    padding-left: 5px;
 }
+
 input[type="email"]{
     width: 300px;
     height: 30px;
     border-radius: 5px;
     border: 1px solid;
+    padding-left: 5px;
 }
 #mob{
-    width: 250px;
+    width: 246px;
     height: 30px;
 }
 #buttonClass{
@@ -114,6 +119,9 @@ span{
 
 #gender-options{
     padding: 6px 8px;
+}
+input[type="radio"]{
+    margin-top: 3px;
 }
 .validateRow{
     /* background-color: green; */
@@ -175,4 +183,15 @@ span{
     color: black;
 }
 
+#role-option-one{
+    /* color: #eb5c1a; */
+    display: none;
+    
+}
 
+#experience-option-one{
+    display: none;
+}
+#country-option-one{
+    display: none;
+}

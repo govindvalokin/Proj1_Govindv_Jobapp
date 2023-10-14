@@ -16,7 +16,7 @@ body{
     
 }
 table{
-    border: 2px solid rgb(104, 231, 45);
+    border: 2px solid rgb(64 44 151);
     border-collapse: collapse;
     text-align: center;
     margin-bottom: 20px;
@@ -24,22 +24,18 @@ table{
 }
 h1{
     text-align: center;
-    color: black;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    color: #3c45b5;;
+    margin-top: 28px;
+    
 }
 .newform{
     text-align: right;
     padding: 0px 0px 10px 0px;
-    margin-right: 27px;
-    
-    /* background-color: yellow; */
-    
-    
-    
+    margin-right: 20px;
+   
 }
 th{
-    background-color: rgb(113, 240, 29);
+    background-color: rgb(64 44 151);
     color: white;
     padding: 10px;
     height: 20px;
@@ -49,33 +45,37 @@ td{
     padding: 10px;
     height: 20px;
     width: 500px;
-    background-color: white;
+    background-color: #cdeff9;;
 
 }
 #butt-2{
-    background-color: blue;
+    background-color: #4635a3;
     color: white;
     font-weight: bold;
     height: 30px;
     width: 100px;
     border-radius: 5px;
+    border: 0.3px solid #4635a3
+    
 }
 .editbutton{
-    background-color: white;
-    color: rgb(30, 70, 202);
+    background-color: #4635a3;
+    color: white;
     height: 30px;
     width: 100px;
     border-radius: 5px;
     font-weight: bold;
+    border: 0.3px solid #4635a3
     
 }
 .delete-button{
-    background-color: white;
-    color: rgb(30, 70, 202);
+    background-color: #4635a3;
+    color: white;
     height: 30px;
     width: 100px;
     border-radius: 5px;
     font-weight: bold;
+    border: 0.3px solid #4635a3
 }
 .alert {
     padding: 8px;
@@ -107,3 +107,7 @@ td{
 .closebtn:hover {
     color: black;
 }
+
+/* .heading{
+    display: flex;
+} */

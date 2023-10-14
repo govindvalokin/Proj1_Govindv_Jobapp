@@ -8,7 +8,7 @@ from django.contrib import messages
 
 # Create your views here.
 def index(request):
-    userdata = Jobseeker.objects.filter(status="added")
+    userdata = Jobseeker.objects.filter(status="added").order_by('-id')
     return render(request,"listing_page.html",{"data":userdata})
 
 def newform(request):
@@ -28,7 +28,7 @@ def newform(request):
         state = request.POST.get("state")
         zipCode = request.POST.get("zipcode")
         country = request.POST.get("country")
-        print(firstName,lastName,code,phone,email,dob,gender,role,experience,addressLine1,addressLine2,city,state,zipCode,country)
+        print(firstName, lastName,code,phone,email,dob,gender,role,experience,addressLine1,addressLine2,city,state,zipCode,country)
         
         def validateFirstName():
             if (firstName == None) or (firstName == "") or (len(firstName) < 3) or (len(firstName) > 25):
@@ -37,7 +37,7 @@ def newform(request):
                 return True
             
         def validateLastName():
-            if (lastName == None) or (lastName == "") or (len(lastName) < 3) or (len(lastName) > 25):
+            if (lastName == None) or (lastName == "") or (len(lastName) < 1) or (len(lastName) > 25):
                 return False
             else:
                 return True
@@ -70,7 +70,7 @@ def newform(request):
             else:
                 return True
         def validateGender():
-            if (gender != "male" and gender != "female" and gender != "other"):
+            if (gender != "Male" and gender != "Female" and gender != "Other"):
                 return False
             else:
                 return True
@@ -85,7 +85,7 @@ def newform(request):
             else:
                 return False
         def validateCountry():
-            if(country == "INDIA" or country == "US"):
+            if(country == "India" or country == "US"):
                 return True
             else:
                 return False
@@ -105,7 +105,7 @@ def newform(request):
 
 
         if (validateFirstName() and validateLastName() and validateCountry() and validateCode() and validateEmail() and validateGender() and validateExperience() and validateRole() and validateZipCode() and validatePhone() and validateAllAddress() and validateDate() == True ):         
-            insertqry = Jobseeker.objects.create(first_name = firstName, last_name = lastName, code = code, phone = phone, email = email, dob = dob, gender = gender, job_role = role, experience = experience, address_line_one = addressLine1, address_line_two = addressLine2, city = city, state = state, zip_code = zipCode, country = country, status = "added")   
+            insertqry = Jobseeker.objects.create(first_name = firstName.capitalize(), last_name = lastName.capitalize(), code = code, phone = phone, email = email, dob = dob, gender = gender, job_role = role, experience = experience, address_line_one = addressLine1.capitalize(), address_line_two = addressLine2.capitalize(), city = city.capitalize(), state = state.capitalize(), zip_code = zipCode, country = country, status = "added")   
             insertqry.save()
             messages.success(request,"successfully submitted the application")
             return HttpResponseRedirect("/index")
@@ -149,7 +149,7 @@ def updateform(request):
                 return True
             
         def validateLastName():
-            if (lastName == None) or (lastName == "") or (len(lastName) < 3) or (len(lastName) > 25):
+            if (lastName == None) or (lastName == "") or (len(lastName) < 1) or (len(lastName) > 25):
                 return False
             else:
                 return True
@@ -183,7 +183,7 @@ def updateform(request):
             else:
                 return True
         def validateGender():
-            if (gender != "male" and gender != "female" and gender != "other"):
+            if (gender != "Male" and gender != "Female" and gender != "Other"):
                 return False
             else:
                 return True
@@ -198,7 +198,7 @@ def updateform(request):
             else:
                 return False
         def validateCountry():
-            if(country == "INDIA" or country == "US"):
+            if(country == "India" or country == "US"):
                 return True
             else:
                 return False
@@ -219,22 +219,22 @@ def updateform(request):
 
         if (validateFirstName() and validateLastName() and validateCountry() and validateCode() and validateEmail() and validateGender() and validateExperience() and validateRole() and validateZipCode() and validatePhone() and validateAllAddress() and validateDate() == True ):         
             updateqry = Jobseeker.objects.get(id=userid)     
-            updateqry.first_name = firstName
-            updateqry.last_name = lastName
+            updateqry.first_name = firstName.capitalize()
+            updateqry.last_name = lastName.capitalize()
             updateqry.code = code
             updateqry.phone = phone
             updateqry.email = email
             updateqry.dob = dob
             updateqry.job_role = role
             updateqry.experience = experience
-            updateqry.address_line_one = addressLine1
-            updateqry.address_line_two = addressLine2
-            updateqry.city = city
-            updateqry.state = state
+            updateqry.address_line_one = addressLine1.capitalize()
+            updateqry.address_line_two = addressLine2.capitalize()
+            updateqry.city = city.capitalize()
+            updateqry.state = state.capitalize()
             updateqry.zip_code = zipCode
             updateqry.country = country
             updateqry.save()
-            messages.success(request,"successfully submitted the application")
+            messages.success(request,"Successfully submitted the application")
             return HttpResponseRedirect("/index")
         messages.error(request,"Something went wrong")
     return render(request,"updateform.html",{"data":userdata})

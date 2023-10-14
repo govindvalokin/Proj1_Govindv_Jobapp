@@ -32,7 +32,7 @@
                             <label>First Name</label>
                         </div>
                         <div class="input-field">
-                            <input type="text" id="firstName" onchange="return validateFirstName(event)" name="firstname" placeholder="  First Name">
+                            <input type="text" id="firstName" onchange="return validateFirstName(event)" name="firstname" placeholder="Type your First Name">
                         </div>    
                     </div>
                     <div class="userInputs">
@@ -40,7 +40,7 @@
                             <label>Last Name</label>
                         </div>
                         <div class="input-field">
-                            <input type="text" id="lastName" onchange="return validateLastName(event)" name="lastname" placeholder="  Last Name">
+                            <input type="text" id="lastName" onchange="return validateLastName(event)" name="lastname" placeholder="Type your Last Name">
                         </div>   
                     </div>    
                 </div>
@@ -62,7 +62,7 @@
                                 <option selected value="+91">+91</option>
                                 <option value="+1">+1</option>
                             </select>
-                            <input type="text" onchange="validatePhone(event)" name="phone" placeholder="  Phone" id="mob" class="phoneno">
+                            <input type="text" onchange="validatePhone(event)" name="phone" placeholder="Type your Phone Number" id="mob" class="phoneno">
                         </div>    
                     </div>
                     <div class="userInputs">
@@ -70,7 +70,7 @@
                             <label>Email</label>
                         </div>
                         <div class="input-field">
-                            <input type="email" onchange="validateEmail(event)" id="email" name="email" placeholder="  Email">
+                            <input type="email" onchange="validateEmail(event)" id="email" name="email" placeholder="Type your Email Address">
                         </div>    
                     </div>    
                 </div>
@@ -96,11 +96,11 @@
                             <label>Gender</label>
                         </div>
                         <div class="input-field" id="gender-options">
-                            <input type="radio" name="gender" value="male">
+                            <input type="radio" name="gender" value="Male">
                             <span>Male</span>
-                            <input type="radio" name="gender" value="female">
+                            <input type="radio" name="gender" value="Female">
                             <span>Female</span>
-                            <input type="radio" name="gender" value="other">
+                            <input type="radio" name="gender" value="Other">
                             <span>Others</span>
                         </div>   
                     </div>
@@ -120,7 +120,7 @@
                         </div>
                         <div class="input-field">
                             <select name="role" id="role" onchange="validateJobRole()">
-                                <option value="" disabled="disabled" selected>Choose JobRole</option>
+                                <option id="role-option-one" value="" disabled="disabled" selected>Choose Job Role</option>
                                 <option value="Developer">Developer</option>
                                 <option value="Testing">Testing</option>
                                 <option value="Devops">Devops</option>
@@ -135,7 +135,7 @@
                         </div>
                         <div class="input-field">
                             <select name="experience" id="experience" onchange="validateExperience()">
-                                <option value="" selected="selected" disabled="disabled">Choose Experience (In years)</option>
+                                <option id="experience-option-one" value="" selected="selected" disabled="disabled">Choose Experience (In years)</option>
                                 <option value = "0">0</option>
                                 <option value = "1">1</option>
                                 <option value = "2">2</option>
@@ -160,7 +160,7 @@
                             <label>Address Line 1</label>
                         </div>
                         <div class="input-field">
-                            <input type="text" onchange="validateAddress1(event)" id="address1" placeholder="  Address Line 1" name="addressline1">
+                            <input type="text" onchange="validateAddress1(event)" id="address1" placeholder="Type your Address" name="addressline1">
                         </div>   
                     </div>
                     <div class="userInputs">
@@ -168,7 +168,7 @@
                             <label>Address Line 2</label>
                         </div>
                         <div class="input-field">
-                            <input type="text" onchange="validateAddress2(event)" id="address2" placeholder="  Address Line 2" name="addressline2">
+                            <input type="text" onchange="validateAddress2(event)" id="address2" placeholder="Type your Address" name="addressline2">
                         </div>     
                     </div>
                 </div>
@@ -186,7 +186,7 @@
                             <label>City</label>
                         </div>
                         <div class="input-field">
-                            <input type="text" id="city" onchange="validateCity(event)" placeholder="  City" name="city">
+                            <input type="text" id="city" onchange="validateCity(event)" placeholder="Type your City" name="city">
                         </div>   
                     </div>
                     <div class="userInputs">
@@ -194,7 +194,7 @@
                             <label>State</label>
                         </div>
                         <div class="input-field">
-                            <input type="text" id="state" onchange="validateState(event)" placeholder="  State" name="state">
+                            <input type="text" id="state" onchange="validateState(event)" placeholder="Type your State" name="state">
                         </div>    
                     </div>
                 </div>
@@ -212,7 +212,7 @@
                             <label>Zip Code</label>
                         </div>
                         <div class="input-field">
-                            <input type="text" id="zipCode" onchange="validateZipCode(event)" placeholder="  Zip Code" name="zipcode">
+                            <input type="text" id="zipCode" onchange="validateZipCode(event)" placeholder="Type your Zip Code" name="zipcode">
                         </div>    
                     </div>
                     <div class="userInputs">
@@ -221,8 +221,8 @@
                         </div>
                         <div class="input-field">
                             <select name="country" id="country">
-                                <option value="" disabled="disabled" selected>Choose Country</option>
-                                <option value="INDIA">INDIA</option>
+                                <option id="country-option-one" value="" disabled="disabled" selected>Choose Country</option>
+                                <option value="India">INDIA</option>
                                 <option value="US">US</option>
                                 
                             </select>  
