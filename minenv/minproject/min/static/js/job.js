@@ -4,7 +4,7 @@ const form = document.getElementById("Form");
     
 function validateForm(event){
     
-    if (validateFirstName() && validateLastName() && validatePhone() && validateEmail() && validateJobRole() && validateAddress1() && validateAddress2() && validateCity() && validateState() && validateZipCode() && validateGender() && validateDate() && validateExperience() && validateCountry() === true){
+    if (validateFirstName() && validateLastName() && validatePhone() && validateEmail() && validateJobRole() && validateAddress1() && validateAddress2() && validateCity() && validateState() && validateZipCode() && validateGender() && validateExperience() && validateCountry() && validateDate() === true){
         console.log("submitted");
         event.submit();    
     }
@@ -199,24 +199,24 @@ function validateGender(event){
 
 
 function validateDate(){
-    const currentDate = new Date();
-    console.log("currentdate=",currentDate);
-    const year = currentDate.getFullYear();
-    const month = (currentDate.getMonth() +1);
-    const day = currentDate.getDay();
-    const today = `${year}-${month}-${day}`; //for converting currentdate into yy-mm-dd format in which format html date input is given even though its placeholder shows dd-mm-yy format 
-    console.log("today=",today);
+    // const currentDate = new Date();
+    // console.log("currentdate=",currentDate);
+    // const year = currentDate.getFullYear();
+    // const month = (currentDate.getMonth() +1);
+    // const day = currentDate.getDay();
+    // const today = `${year}-${month}-${day}`; //for converting currentdate into yy-mm-dd format in which format html date input is given even though its placeholder shows dd-mm-yy format 
+    // console.log("today=",today);
 
     // const givenDate = dob.value;
     const givenDate = document.getElementById("date").value;
     console.log("givendate=",givenDate);
-    const date1 = new Date(today);
+    const date1 = new Date();
     console.log("date1=",date1);
     const date2 = new Date(givenDate);
     console.log("date2=",date2);
     // const timeDiff = Math.round((date1-date2)/(1000*60*60*24*365.25));
     const timeDiff = (date1-date2)/(1000*60*60*24*365.25);
-    console.log(timeDiff)
+    // console.log(timeDiff)
     if (timeDiff>=18){
         document.getElementById("validateDate").innerHTML="";
         return true;
