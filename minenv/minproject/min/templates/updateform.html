@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Form</title>
     <link rel="stylesheet" href="{% static 'css/job.css' %}">
-    <script src="{% static 'js/updatejob.js' %}"></script>
+    <script src="{% static 'js/job.js' %}"></script>
 </head>
 <body>
         {% if messages %}
@@ -45,10 +45,10 @@
                 </div>
                 <div class="validateRow">
                     <div class="validateBox1">
-                        <h6 id="validFirstName"></h6>
+                        <span id="validFirstName"></span>
                     </div>
                     <div class="validateBox2">
-                        <h6 id="validLastName"></h6>
+                        <span id="validLastName"></span>
                     </div>
                 </div>
                 <div class="formRow">
@@ -75,10 +75,10 @@
                 </div>
                 <div class="validateRow">
                     <div class="validateBox1">
-                        <h6 id="validateNumber"></h6>
+                        <span id="validateNumber"></span>
                     </div>
                     <div class="validateBox2">
-                        <h6 id="validateEmail"></h6>
+                        <span id="validateEmail"></span>
                     </div>
                 </div>
                 <div class="formRow">
@@ -88,7 +88,7 @@
                         </div>
                         <div class="input-field">
                             {% comment %} <input type="date" id="date" name="dob"> {% endcomment %}
-                            <input type = "date" id = "date"  name = "dob" value="{{data.dob|date:"Y-m-d"}}">
+                            <input type = "date" id = "date"  name = "dob" value="{{data.dob|date:"Y-m-d"}}" onchange= "validateDate()">
                         </div>    
                     </div>
                     <div class="userInputs">
@@ -97,20 +97,20 @@
                         </div>
                         <div class="input-field" id="gender-options">
                             <input type="radio" name="gender" value="Male" {% if data.gender == "Male" %} checked {% endif %}>
-                            <span>Male</span>
+                            <span class="gender-span">Male</span>
                             <input type="radio" name="gender" value="Female" {% if data.gender == "Female" %} checked {% endif %}>
-                            <span>Female</span>
+                            <span class="gender-span">Female</span>
                             <input type="radio" name="gender" value="Other" {% if data.gender == "Other" %} checked {% endif %}>
-                            <span>Others</span>
+                            <span class="gender-span">Others</span>
                         </div>   
                     </div>
                 </div>
                 <div class="validateRow">
                     <div class="validateBox1">
-                        <h6 id="validateDate"></h6>
+                        <span id="validateDate"></span>
                     </div>
                     <div class="validateBox2">
-                        <h6 id="validateGender"></h6>
+                        <span id="validateGender"></span>
                     </div>
                 </div>
                 <div class="formRow">
@@ -148,10 +148,10 @@
                 </div>
                 <div class="validateRow">
                     <div class="validateBox1">
-                        <h6 id="validateJobRole"></h6>
+                        <span id="validateJobRole"></span>
                     </div>
                     <div class="validateBox2">
-                        <h6 id="validateExperience"></h6>
+                        <span id="validateExperience"></span>
                     </div>
                 </div>
                 <div class="formRow">
@@ -174,10 +174,10 @@
                 </div>
                 <div class="validateRow">
                     <div class="validateBox1">
-                        <h6 id="validateAddress1"></h6>
+                        <span id="validateAddress1"></span>
                     </div>
                     <div class="validateBox2">
-                        <h6 id="validateAddress2"></h6>
+                        <span id="validateAddress2"></span>
                     </div>
                 </div>
                 <div class="formRow">
@@ -200,10 +200,10 @@
                 </div>
                 <div class="validateRow">
                     <div class="validateBox1">
-                        <h6 id="validateCity"></h6>
+                        <span id="validateCity"></span>
                     </div>
                     <div class="validateBox2">
-                        <h6 id="validateState"></h6>
+                        <span id="validateState"></span>
                     </div>
                 </div>
                 <div class="formRow">
@@ -231,10 +231,10 @@
                 </div>
                 <div class="validateRow">
                     <div class="validateBox1">
-                        <h6 id="validateZipCode"></h6>
+                        <span id="validateZipCode"></span>
                     </div>
                     <div class="validateBox2">
-                        <h6 id="validateCountry"></h6>
+                        <span id="validateCountry"></span>
                     </div>
                 </div>
                 <div class="formRow" id="buttonClass">
