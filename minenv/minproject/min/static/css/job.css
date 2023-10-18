@@ -97,11 +97,13 @@ input[type="email"]{
 }
 #b2{
     background-color: rgb(26, 56, 190);
-    width: 100px;
+    width: 218px;
     border-radius: 5px;
     margin: 5px;
     color: white;
     height: 40px;
+    font-weight: bold;
+    font-size: medium;
     
     
 }
@@ -137,9 +139,11 @@ input[type="radio"]{
     /* background-color: yellow; */
     height: 15px;
     width: 425px;
-    text-align: center;
+    text-align: left;
     color: Red;
     font-weight: lighter;
+    font-size: small;
+    padding-left: 111px;
     /* padding-top: 0px; */
     
 }
@@ -147,9 +151,11 @@ input[type="radio"]{
     /* background-color: lightblue; */
     height: 15px;
     width: 425px;
-    text-align: center;
+    text-align: left;
     color: red;
     font-weight: lighter;
+    font-size: small;
+    padding-left: 133px;
 }
 
 .alert {
@@ -194,4 +200,9 @@ input[type="radio"]{
 }
 #country-option-one{
     display: none;
+}
+sup{
+    padding: 1px;
+    color: red;
+    
 }

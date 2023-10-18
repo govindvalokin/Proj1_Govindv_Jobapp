@@ -23,12 +23,12 @@ function validateFirstName(event){
     
     
         if(firstname===""){
-            document.getElementById("validFirstName").innerHTML="Name can not be null"; 
+            document.getElementById("validFirstName").innerHTML="Name can not be empty"; 
             // console.log("121");
             return false;
         }
         if((firstname.length<3) || (firstname.length>25)){
-            document.getElementById("validFirstName").innerHTML="No of letters must be between 3 and 25";
+            document.getElementById("validFirstName").innerHTML="Number of letters must be between 3 and 25";
             // console.log("2222");
             return false;
         }
@@ -46,12 +46,12 @@ function validateFirstName(event){
 function validateLastName(event){
     var lastname = document.getElementById("lastName").value.trim();
     if(lastname===""){
-        document.getElementById("validLastName").innerHTML="Name can not be null";
+        document.getElementById("validLastName").innerHTML="Name can not be empty";
         // console.log("121");
         return false;
     }
     if((lastname.length<1) || (lastname.length>25)){
-        document.getElementById("validLastName").innerHTML="No of letters must be between 3 and 25";
+        document.getElementById("validLastName").innerHTML="Number of letters must be between 1 and 25";
         return false;
     }
     else{
@@ -68,11 +68,11 @@ function validatePhone(event){
     var phonenumber = document.getElementById("mob").value.trim();
     const regexmob = /^\d{10}$/;
     if(phonenumber===""){
-        document.getElementById("validateNumber").innerHTML="Number can't be null";
+        document.getElementById("validateNumber").innerHTML="Number can not be empty";
         return false;
     }
     if(!regexmob.test(phonenumber)){
-        document.getElementById("validateNumber").innerHTML="Invalid format";
+        document.getElementById("validateNumber").innerHTML="Phone number is invalid";
         return false;
     }
     else{
@@ -87,12 +87,12 @@ function validateEmail(event){
     const regexemail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     if(email===""){
-        document.getElementById("validateEmail").innerHTML="Email can't be null";
+        document.getElementById("validateEmail").innerHTML="Email can not be empty";
         
         return false;
     }
     if(!regexemail.test(email)){
-        document.getElementById("validateEmail").innerHTML="Invalid format";
+        document.getElementById("validateEmail").innerHTML="Email format is invalid";
         
         return false;
     }
@@ -106,7 +106,7 @@ function validateEmail(event){
 function validateAddress1(event){
     var address1 = document.getElementById("address1").value.trim();
     if(address1==="" || address1==null){
-        document.getElementById("validateAddress1").innerHTML="Address can't be null";
+        document.getElementById("validateAddress1").innerHTML="Address can not be empty";
         
         return false;
     }
@@ -156,7 +156,7 @@ function validateState(event){
 function validateZipCode(event){
     var zipcode = document.getElementById("zipCode").value.trim();
     if(zipcode==="" || zipcode==null){
-        document.getElementById("validateZipCode").innerHTML="Zip-code can't be null";
+        document.getElementById("validateZipCode").innerHTML="Zip-code can not be empty";
         
         return false;
     }
@@ -182,6 +182,7 @@ function validateGender(event){
     for(var i=0;i<gender.length;i++){
         if(gender[i].checked){
             genderFlag = true;
+            document.getElementById('validateGender').innerHTML="";
             break;    
         }    
     }
@@ -230,7 +231,7 @@ function validateDate(){
 function validateJobRole(){
     var jobRole = document.getElementById("role").value;
     if (jobRole == "" || jobRole == null){
-        document.getElementById("validateJobRole").innerHTML="Can not be blank";
+        document.getElementById("validateJobRole").innerHTML="Can not be empty";
         return false;
     }
     else if((jobRole == "Developer") || (jobRole == "Testing") || (jobRole == "Devops") || (jobRole == "Operations") || (jobRole == "Accounting")){
@@ -242,7 +243,7 @@ function validateJobRole(){
 function validateExperience(){
     var experience = document.getElementById("experience").value;
     if(experience == "" || experience == null ){
-        document.getElementById("validateExperience").innerHTML="Can not be blank";
+        document.getElementById("validateExperience").innerHTML="Can not be empty";
         return false;
     }
     else{
@@ -254,7 +255,7 @@ function validateExperience(){
 function validateCountry(){
     var country = document.getElementById("country").value;
     if(country == "" || country == null){
-        document.getElementById("validateCountry").innerHTML="Can not be blank";
+        document.getElementById("validateCountry").innerHTML="Can not be empty";
         return false;
     }
     else{
@@ -262,3 +263,7 @@ function validateCountry(){
         return true;
     }
 }
+
+function preventbackbutton(){window.history.forward();}//
+setTimeout("preventbackbutton()", 0);
+window.onunload=function(){null};

@@ -29,7 +29,7 @@
                 <div class="formRow">
                     <div class="userInputs">
                         <div class="L">
-                            <label>First Name</label>
+                            <label>First Name<sup>*</sup></label>
                         </div>
                         <div class="input-field">
                             <input type="text" id="firstName" onchange="return validateFirstName(event)" name="firstname" placeholder="Type your First Name">
@@ -46,16 +46,16 @@
                 </div>
                 <div class="validateRow">
                     <div class="validateBox1">
-                        <h6 id="validFirstName"></h6>
+                        <span id="validFirstName"></span>
                     </div>
                     <div class="validateBox2">
-                        <h6 id="validLastName"></h6>
+                        <span id="validLastName"></span>
                     </div>
                 </div>
                 <div class="formRow">
                     <div class="userInputs">
                         <div class="L">
-                            <label>Phone</label>
+                            <label>Phone<sup>*</sup></label>
                         </div>
                         <div class="input-field">
                             <select name="code" id="code">
@@ -67,7 +67,7 @@
                     </div>
                     <div class="userInputs">
                         <div class="L">
-                            <label>Email</label>
+                            <label>Email<sup>*</sup></label>
                         </div>
                         <div class="input-field">
                             <input type="email" onchange="validateEmail(event)" id="email" name="email" placeholder="Type your Email Address">
@@ -76,24 +76,24 @@
                 </div>
                 <div class="validateRow">
                     <div class="validateBox1">
-                        <h6 id="validateNumber"></h6>
+                        <span id="validateNumber"></span>
                     </div>
                     <div class="validateBox2">
-                        <h6 id="validateEmail"></h6>
+                        <span id="validateEmail"></span>
                     </div>
                 </div>
                 <div class="formRow">
                     <div class="userInputs">
                         <div class="L">
-                            <label>DOB</label>
+                            <label>DOB<sup>*</sup></label>
                         </div>
                         <div class="input-field">
-                            <input type="date" id="date" name="dob" onchange= "validateDate()">
+                            <input type="text" onfocus="(this.type = 'date')" placeholder="Enter Date of Birth" id="date" name="dob" onchange= "validateDate()">
                         </div>    
                     </div>
                     <div class="userInputs">
                         <div class="L">
-                            <label>Gender</label>
+                            <label>Gender<sup>*</sup></label>
                         </div>
                         <div class="input-field" id="gender-options">
                             <input type="radio" name="gender" value="Male">
@@ -107,16 +107,16 @@
                 </div>
                 <div class="validateRow">
                     <div class="validateBox1">
-                        <h6 id="validateDate"></h6>
+                        <span id="validateDate"></span>
                     </div>
                     <div class="validateBox2">
-                        <h6 id="validateGender"></h6>
+                        <span id="validateGender"></span>
                     </div>
                 </div>
                 <div class="formRow">
                     <div class="userInputs">
                         <div class="L">
-                            <label>Job Role</label>
+                            <label>Job Role<sup>*</sup></label>
                         </div>
                         <div class="input-field">
                             <select name="role" id="role" onchange="validateJobRole()">
@@ -131,7 +131,7 @@
                     </div>
                     <div class="userInputs">
                         <div class="L">
-                            <label>Experience</label>
+                            <label>Experience<sup>*</sup></label>
                         </div>
                         <div class="input-field">
                             <select name="experience" id="experience" onchange="validateExperience()">
@@ -148,10 +148,10 @@
                 </div>
                 <div class="validateRow">
                     <div class="validateBox1">
-                        <h6 id="validateJobRole"></h6>
+                        <span id="validateJobRole"></span>
                     </div>
                     <div class="validateBox2">
-                        <h6 id="validateExperience"></h6>
+                        <span id="validateExperience"></span>
                     </div>
                 </div>
                 <div class="formRow">
@@ -174,10 +174,10 @@
                 </div>
                 <div class="validateRow">
                     <div class="validateBox1">
-                        <h6 id="validateAddress1"></h6>
+                        <span id="validateAddress1"></span>
                     </div>
                     <div class="validateBox2">
-                        <h6 id="validateAddress2"></h6>
+                        <span id="validateAddress2"></span>
                     </div>
                 </div>
                 <div class="formRow">
@@ -200,10 +200,10 @@
                 </div>
                 <div class="validateRow">
                     <div class="validateBox1">
-                        <h6 id="validateCity"></h6>
+                        <span id="validateCity"></span>
                     </div>
                     <div class="validateBox2">
-                        <h6 id="validateState"></h6>
+                        <span id="validateState"></span>
                     </div>
                 </div>
                 <div class="formRow">
@@ -231,10 +231,10 @@
                 </div>
                 <div class="validateRow">
                     <div class="validateBox1">
-                        <h6 id="validateZipCode"></h6>
+                        <span id="validateZipCode"></span>
                     </div>
                     <div class="validateBox2">
-                        <h6 id="validateCountry"></h6>
+                        <span id="validateCountry"></span>
                     </div>
                 </div>
                 <div class="formRow" id="buttonClass">

@@ -87,7 +87,8 @@
                             <label>DOB</label>
                         </div>
                         <div class="input-field">
-                            <input type="date" id="date" name="dob">
+                            {% comment %} <input type="date" id="date" name="dob"> {% endcomment %}
+                            <input type = "date" id = "date"  name = "dob" value="{{data.dob|date:"Y-m-d"}}">
                         </div>    
                     </div>
                     <div class="userInputs">

@@ -7,10 +7,13 @@ import datetime
 from django.contrib import messages
 
 # Create your views here.
+
+# listing page to display registered applicants
 def index(request):
     userdata = Jobseeker.objects.filter(status="added").order_by('-id')
     return render(request,"listing_page.html",{"data":userdata})
 
+#  Job form to register new users 
 def newform(request):
     if request.POST:
         firstName = request.POST.get("firstname")
@@ -107,21 +110,24 @@ def newform(request):
         if (validateFirstName() and validateLastName() and validateCountry() and validateCode() and validateEmail() and validateGender() and validateExperience() and validateRole() and validateZipCode() and validatePhone() and validateAllAddress() and validateDate() == True ):         
             insertqry = Jobseeker.objects.create(first_name = firstName.capitalize(), last_name = lastName.capitalize(), code = code, phone = phone, email = email, dob = dob, gender = gender, job_role = role, experience = experience, address_line_one = addressLine1.capitalize(), address_line_two = addressLine2.capitalize(), city = city.capitalize(), state = state.capitalize(), zip_code = zipCode, country = country, status = "added")   
             insertqry.save()
-            messages.success(request, "successfully submitted the application")
+            messages.success(request, "Successfully submitted the application")
             return HttpResponseRedirect("/index")
         messages.error(request, "Something went wrong")
     return render(request, "job.html")
 
-def dform(request):
-    form = JobForm()
-    return render(request, "form.html", {"form":form})
-def dformstore(request):
-    if request.method=="POST":
-        form = JobForm(request.POST)
-        if form.is_valid():
-            print(form)
-            # form.save()
-    #     return redirect("/index")
+# Django Forms
+# def dform(request):
+#     form = JobForm()
+#     return render(request, "form.html", {"form":form})
+# def dformstore(request):
+#     if request.method=="POST":
+#         form = JobForm(request.POST)
+#         if form.is_valid():
+#             print(form)
+#             # form.save()
+#     #     return redirect("/index")
+
+# Update user data
 def updateform(request):
     userid=request.GET['userid']
     userdata=Jobseeker.objects.get(id = userid)
@@ -240,6 +246,7 @@ def updateform(request):
         messages.error(request, "Something went wrong")
     return render(request, "updateform.html", {"data":userdata})
 
+# Delete existing user
 def deleteData(request):
     userid=request.GET['userid']
     Jobseeker.objects.get(id = userid).delete()

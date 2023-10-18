@@ -20,18 +20,23 @@ table{
     border-collapse: collapse;
     text-align: center;
     margin-bottom: 20px;
+    background-color: white;
     
 }
 h1{
     text-align: center;
-    color: #3c45b5;;
+    color: #3c45b5;
+    /* color: black; */
     margin-top: 28px;
+    margin-bottom: 10px;
     
 }
 .newform{
-    text-align: right;
+    /* background-color: yellow; */
+    text-align: center;
     padding: 0px 0px 10px 0px;
     margin-right: 20px;
+    margin-bottom: 5px;
    
 }
 th{
@@ -45,9 +50,12 @@ td{
     padding: 10px;
     height: 20px;
     width: 500px;
-    background-color: #cdeff9;;
+    /* background-color: white; */
 
 }
+tr:nth-child(even) {
+    background-color: rgb(239 239 239);
+  }
 #butt-2{
     background-color: #4635a3;
     color: white;
@@ -57,6 +65,9 @@ td{
     border-radius: 5px;
     border: 0.3px solid #4635a3
     
+}
+#butt-2:hover{
+    background-color: rgb(63, 207, 63);
 }
 .editbutton{
     background-color: #4635a3;
@@ -68,6 +79,9 @@ td{
     border: 0.3px solid #4635a3
     
 }
+.editbutton:hover{
+    background-color: rgb(63, 207, 63);
+}
 .delete-button{
     background-color: #4635a3;
     color: white;
@@ -76,6 +90,9 @@ td{
     border-radius: 5px;
     font-weight: bold;
     border: 0.3px solid #4635a3
+}
+.delete-button:hover{
+    background-color: red;
 }
 .alert {
     padding: 8px;
